@@ -353,18 +353,18 @@ sudo apt install -y postgresql
 sudo systemctl start postgresql@15-main
 
 # Switch to the postgres user's shell
-sudo -u postgres bash <<EOF
+#sudo -u postgres bash <<EOF
 
 # Create a PostgreSQL user named 'gvm'
-createuser -DRS gvm
+#createuser -DRS gvm
 
 # Create a PostgreSQL database named 'gvmd' owned by 'gvm'
-createdb -O gvm gvmd
+#createdb -O gvm gvmd
 
 # Connect to the 'gvmd' database and create a role 'dba' with superuser privileges
-psql gvmd -c "create role dba with superuser noinherit; grant dba to gvm;"
+#psql gvmd -c "create role dba with superuser noinherit; grant dba to gvm;"
 
-EOF
+#EOF
 
 # Exit the postgres user's shell
 exit
