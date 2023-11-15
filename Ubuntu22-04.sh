@@ -346,11 +346,11 @@ else
     echo "Sudoers line added successfully."
 fi
 
-sudo apt update
-sudo apt install -y postgresql
+#sudo apt update
+#sudo apt install -y postgresql
 
 # Start PostgreSQL service
-sudo systemctl start postgresql@15-main
+#sudo systemctl start postgresql@15-main
 
 # Switch to the postgres user's shell
 #sudo -u postgres bash <<EOF
@@ -367,7 +367,7 @@ sudo systemctl start postgresql@15-main
 #EOF
 
 # Exit the postgres user's shell
-exit
+#exit
 /usr/local/sbin/gvmd --create-user=admin --password=CTN@1305
 /usr/local/sbin/gvmd --modify-setting 78eceaec-3385-11ea-b237-28d24461215b --value `/usr/local/sbin/gvmd --get-users --verbose | grep admin | awk '{print $2}'`
 cat << EOF > $BUILD_DIR/ospd-openvas.service
