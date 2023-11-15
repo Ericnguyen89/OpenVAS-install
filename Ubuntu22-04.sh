@@ -475,3 +475,11 @@ sudo systemctl enable gvmd
 sudo systemctl enable gsad
 
 sudo /usr/local/bin/greenbone-feed-sync
+#----------------------------------------
+sudo timedatectl set-timezone Asia/Bangkok
+
+# Verify the time zone change
+timedatectl
+
+# Add the cron job to run greenbone-feed-sync at 1:00 AM
+(crontab -l ; echo "0 1 * * * /usr/local/bin/greenbone-feed-sync") | crontab -
